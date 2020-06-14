@@ -20,14 +20,14 @@ Please pay attention to modify the data input and output path.
 The extraction of feature codes includes three stages: feature network data reading, feature code network construction, feature
 code network training set feature code extraction. The feature encoding network involves numerous parameters and file paths, 
 so first define a configuration file to facilitate subsequent data reading and network training.
-'config.py' is a configuration file for all the feature encoding networks.
-For each feature:
+'config.py' is a configuration file for all the feature encoding networks.<br>
+`For each feature`:
 The python file starting with "dataloader" is a data reading file.<br>
 The python file starting with "model" is a model file.<br>
 The python file starting with "main" is a model file.<br>
 Take Mel-spectrogram as an example to introduce model training, and the usage 
-of the model corresponding to other features is the same.
-`training:`
+of the model corresponding to other features is the same.<br>
+`training:`<br>
 ```python
 python main_mel_6_14.py
 ```
@@ -38,3 +38,24 @@ python main_mel_6_14.py --resume 12 -e
 ```
 Please note that lines 98, 301, 313, 317 and 318 may need to be modified when 
 extracting the feature encoding of the training dataset and testing dataset.
+
+## Use the sum rule to initially select the top 6 feature combinations that yields the highest testing accuracies.
+```python
+python combination_6_14.py
+```
+## Final decision
+After selecting the top 6 feature combinations that yields the highest testing accuracies, a meta CNN is used to 
+learn aggregated high level features for final genre classification based on these top 6 feature combinations. <br>
+
+`training:`<br> 
+```python
+python dataloader_sT_fusion.py
+```
+`evaluating:` <br>
+```python
+python dataloader_sT_fusion.py --reusme 12 -e
+```
+## Calculate the confusion matrix with the effective measures.
+```python
+python matrix_confusion.py
+```

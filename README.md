@@ -1,6 +1,6 @@
 # music-genre-recognition
 Multi-level local feature coding fusion for music genre recognition
-##extract features
+## extract features
 a) In this work, we used Marsyas toolbox to generate the timbre features. For documentation, see the url: http://marsyas.info/ <br>
 b) In this work, we used the TU Wien's implementation to generate the rhythm histogram (RH) and statistical spectrum descriptor (SSD).
    (https://github.com/tuwien-musicir/rp_extract) <br>

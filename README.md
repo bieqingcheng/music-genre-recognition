@@ -10,8 +10,9 @@ implementation. For scatter transform spectrogram, we used the Kymatio implement
 can be seen in the folder extreact_features.
 
 ## Dataset split
-Split the dataset and store each fold of data in a txt file.
+Split the dataset and store each fold of data in a txt file.<br>
 usage:
 ``` python
 python fold_10_split.py
 ```
+Please pay attention to modify the data input and output path.

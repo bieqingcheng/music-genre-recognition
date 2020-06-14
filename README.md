@@ -21,7 +21,7 @@ The extraction of feature codes includes three stages: feature network data read
 code network training set feature code extraction. The feature encoding network involves numerous parameters and file paths, 
 so first define a configuration file to facilitate subsequent data reading and network training.
 'config.py' is a configuration file for all the feature encoding networks.<br>
-`For each feature`:
+`For each feature`:<br>
 The python file starting with "dataloader" is a data reading file.<br>
 The python file starting with "model" is a model file.<br>
 The python file starting with "main" is a model file.<br>

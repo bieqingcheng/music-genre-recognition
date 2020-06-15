@@ -124,7 +124,7 @@ def main():
 
     if args.evaluate:
         print('\nEvaluation only')
-        test_loss, test_acc = test(test_dataloader, model, criterion, start_epoch, use_cuda)
+        test_loss, test_acc = test(test_dataloader, model, criterion, criterion_cent, start_epoch, use_cuda)
         print('test_loss:{}, test_acc:{}'.format(test_loss, test_acc))
         return
     epoches = Config["normal_config"]["epoch_num"]

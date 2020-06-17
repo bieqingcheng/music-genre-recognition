@@ -129,7 +129,7 @@ def main():
 
     if args.evaluate:
         print('\nEvaluation only')
-        test_loss, test_acc = test(test_dataloader, model, criterion, start_epoch, use_cuda)
+        test_loss, test_acc = test(test_dataloader, model, criterion, criterion_cent, start_epoch, use_cuda)
         print('test_loss:{}, test_acc:{}'.format(test_loss, test_acc))
         return
     epoches = Config["normal_config"]["epoch_num"]
@@ -138,8 +138,8 @@ def main():
         epoch = start_epoch + epoch
         adjust_learning_rate(optimizer, epoch)
         print('\nEpoch: [%d | %d] LR: %f' % (epoch, epoches, state['lr']))
-        train_loss, train_acc = train(train_dataloader, model, criterion, optimizer, epoch, use_cuda)
-        test_loss, test_acc = test(test_dataloader, model, criterion, epoch, use_cuda)
+        train_loss, train_acc = train(train_dataloader, model, criterion, criterion_cent, optimizer, optimizer_cent, epoch, use_cuda)
+        test_loss, test_acc = test(test_dataloader, model, criterion, criterion_cent, epoch, use_cuda)
         line = 'Epoch: [%d|%d] train_acc: %f train_loss: %f \t test_acc: %f test_loss :%f \tlr:%f\n' % (epoch, epoches, train_acc,
                 train_loss,test_acc,test_loss,state['lr'])
         print(line)

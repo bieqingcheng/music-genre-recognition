@@ -49,11 +49,11 @@ learn aggregated high level features for final genre classification based on the
 
 `training:`<br> 
 ```python
-python dataloader_sT_fusion.py
+python main_fusion_sT_6_14.py
 ```
 `evaluating:` <br>
 ```python
-python dataloader_sT_fusion.py --reusme 12 -e
+python main_fusion_sT_6_14.py --reusme 12 -e
 ```
 ## Calculate the confusion matrix with the effective measures.
 ```python

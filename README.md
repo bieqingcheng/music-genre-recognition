@@ -24,7 +24,7 @@ so first define a configuration file to facilitate subsequent data reading and n
 `For each feature`:<br>
 The python file starting with "dataloader" is a data reading file.<br>
 The python file starting with "model" is a model file.<br>
-The python file starting with "main" is a model file.<br>
+The python file starting with "main" is a main file.<br>
 Take Mel-spectrogram as an example to introduce model training, and the usage 
 of the model corresponding to other features is the same.<br>
 `training:`<br>
